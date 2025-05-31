@@ -12,8 +12,8 @@ interface ScheduleDao {
     suspend fun getAll(): List<Schedule>
     @Query("SELECT * FROM schedule WHERE id = :id")
     suspend fun getById(id: Int): Schedule
-    @Query("SELECT * FROM schedule WHERE patientId = :patientId")
-    suspend fun getByPatientId(patientId: Int): List<Schedule>
+    @Query("SELECT * FROM schedule WHERE medicationId = :medicationId")
+    suspend fun getByMedicationId(medicationId: Int): List<Schedule>
     @Insert
     suspend fun insertAll(vararg schedules: Schedule)
     @Update
@@ -22,6 +22,6 @@ interface ScheduleDao {
     suspend fun deleteAll()
     @Query("DELETE FROM schedule WHERE id = :id")
     suspend fun deleteById(id: Int)
-    @Query("DELETE FROM schedule WHERE patientId = :patientId")
-    suspend fun deleteByPatientId(patientId: Int)
+    @Query("DELETE FROM schedule WHERE medicationId = :medicationId")
+    suspend fun deleteByMedicationId(medicationId: Int)
 }

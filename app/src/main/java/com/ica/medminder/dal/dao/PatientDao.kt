@@ -4,12 +4,13 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import kotlinx.coroutines.flow.Flow
 import com.ica.medminder.dal.entities.Patient
 
 @Dao
 interface PatientDao {
     @Query("SELECT * FROM patient")
-    suspend fun getAll(): List<Patient>
+    fun getAll(): Flow<List<Patient>>
     @Query("SELECT * FROM patient WHERE id = :id")
     suspend fun getById(id: Int): Patient
     @Insert

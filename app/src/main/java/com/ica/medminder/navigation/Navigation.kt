@@ -42,7 +42,7 @@ fun MainNavigation() {
 fun MainNavigationContent(navController: NavHostController, innerPadding: PaddingValues) {
     NavHost(
         navController = navController,
-        startDestination = NavigationDestinations.Schedule.route,
+        startDestination = NavigationDestinations.Patients.route,
         modifier = Modifier.padding(innerPadding) // Apply padding here
     ) {
         composable(NavigationDestinations.Schedule.route) { ScheduleScreen(navController) }

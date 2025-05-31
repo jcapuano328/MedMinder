@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey
 @Entity
 data class Schedule(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val patientId: Int,
     val medicationId: Int,
     val frequency: String,
     val dow: String,
